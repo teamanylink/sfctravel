@@ -21,9 +21,7 @@ export default function CaptainsTablePage() {
       </div>
 
       {!isUnlocked && (
-        <div className="absolute inset-0 z-30 flex items-center justify-center">
-          <AccessGate onUnlock={() => setIsUnlocked(true)} />
-        </div>
+        <AccessGate onUnlock={() => setIsUnlocked(true)} />
       )}
 
       <div className={`relative z-10 px-6 lg:px-12 pt-32 lg:pt-40 pb-32 transition-all duration-1000 flex-1 ${isUnlocked ? "opacity-100 blur-none" : "opacity-0 blur-xl pointer-events-none select-none"}`}>

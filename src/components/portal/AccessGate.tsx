@@ -22,7 +22,7 @@ export default function AccessGate({ onUnlock }: AccessGateProps) {
   };
 
   return (
-    <div className="absolute inset-0 z-30 flex items-center justify-center bg-navy-900/60 backdrop-blur-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy-900/80 backdrop-blur-2xl">
       <div className="bg-navy-900/40 backdrop-blur-xl p-12 rounded-[2rem] shadow-[0_0_80px_rgba(0,0,0,0.4)] border border-white/10 max-w-lg w-full mx-4 text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-ocean-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-ocean-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/4 pointer-events-none" />
