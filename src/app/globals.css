@@ -116,12 +116,16 @@ body {
 @keyframes blurFadeIn {
   0% {
     opacity: 0;
+    -webkit-filter: blur(20px);
     filter: blur(20px);
+    -webkit-transform: translateY(20px) scale(0.98);
     transform: translateY(20px) scale(0.98);
   }
   100% {
     opacity: 1;
+    -webkit-filter: blur(0);
     filter: blur(0);
+    -webkit-transform: translateY(0) scale(1);
     transform: translateY(0) scale(1);
   }
 }
@@ -148,6 +152,11 @@ body {
 .delay-700 { animation-delay: 700ms; }
 .delay-1000 { animation-delay: 1000ms; }
 .delay-\[1200ms\] { animation-delay: 1200ms; }
+
+/* Safari bg-clip-text fix */
+.bg-clip-text {
+  -webkit-background-clip: text;
+}
 
 /* Line separator */
 .line-separator {

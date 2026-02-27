@@ -24,7 +24,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-navy-900">
+    <section className="relative h-screen h-[100dvh] w-full overflow-hidden bg-navy-900">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {heroSlides.map((slide, i) => (
@@ -32,9 +32,9 @@ export default function Hero() {
             key={i}
             src={slide.src}
             alt={slide.alt}
-            className={`absolute inset-0 w-full h-full object-cover transition-all duration-[2000ms] ease-in-out ${
+            className={`absolute inset-0 w-full h-full object-cover will-change-[opacity,transform] transition-[opacity,transform] duration-[2000ms] ease-in-out ${
               currentGroup === i
-                ? "opacity-60 scale-100 blur-0"
+                ? "opacity-60 scale-100"
                 : "opacity-0 scale-105 blur-md"
             } ${i === 0 ? "animate-scale-in" : ""}`}
           />
@@ -50,14 +50,14 @@ export default function Hero() {
             <div className="h-[120px] md:h-[160px] lg:h-[200px] xl:h-[240px] relative mb-6">
               <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl xl:text-[6rem] font-medium leading-[1.15] tracking-[-0.02em] drop-shadow-2xl">
                 {/* Group 1 */}
-                <div className={`absolute inset-0 transition-all duration-1000 ease-in-out ${currentGroup === 0 ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 -translate-y-4 blur-sm pointer-events-none'}`}>
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/60 drop-shadow-sm">From the seas,</span>
+                <div className={`absolute inset-0 transition-[opacity,transform,filter] duration-1000 ease-in-out ${currentGroup === 0 ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 -translate-y-4 blur-sm pointer-events-none'}`}>
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/60">From the seas,</span>
                   <span className="block text-[#a8d4e6] mt-1 md:mt-2">to the skies.</span>
                 </div>
                 
                 {/* Group 2 */}
-                <div className={`absolute inset-0 transition-all duration-1000 ease-in-out ${currentGroup === 1 ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-4 blur-sm pointer-events-none'}`}>
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/60 drop-shadow-sm">Your next adventure,</span>
+                <div className={`absolute inset-0 transition-[opacity,transform,filter] duration-1000 ease-in-out ${currentGroup === 1 ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-4 blur-sm pointer-events-none'}`}>
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/60">Your next adventure,</span>
                   <span className="block text-[#a8d4e6] mt-1 md:mt-2">starts here.</span>
                 </div>
               </h1>
