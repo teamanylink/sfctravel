@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --font-serif: var(--font-playfair-display);
+  --font-sans: var(--font-inter);
+}
+
+@theme inline {
+  --color-ocean-50: #f0f9ff;
+  --color-ocean-100: #e0f2fe;
+  --color-ocean-200: #bae6fd;
+  --color-ocean-300: #7dd3fc;
+  --color-ocean-400: #38bdf8;
+  --color-ocean-500: #0ea5e9;
+  --color-ocean-600: #0284c7;
+  --color-ocean-700: #0369a1;
+  --color-ocean-800: #075985;
+  --color-ocean-900: #0c4a6e;
+  --color-navy-900: #0a1628;
+  --color-navy-800: #0f1f35;
+  --color-navy-700: #152847;
+  --color-soft-black: #1a1a1a;
+  --color-warm-gray: #e8e6e3;
+  --color-light-blue: #a8d4e6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fcfcfc; /* Slightly brighter, cleaner white */
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Swiss-style typography */
+.text-swiss {
+  font-weight: 200; /* Ultra-light for sleeker look */
+  letter-spacing: -0.03em; /* Tighter tracking for display */
+}
+
+/* Architectural minimal buttons */
+.btn-swiss {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); /* Smoother ease-out */
+  display: inline-block;
+}
+
+.btn-swiss::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-swiss:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Gradient transitions */
+.gradient-section {
+  background: linear-gradient(180deg, #fcfcfc 0%, #f4f4f4 50%, #eaeaea 100%);
+}
+
+/* Hero overlay */
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 22, 40, 0) 0%,
+    rgba(10, 22, 40, 0.2) 50%,
+    rgba(10, 22, 40, 0.85) 100%
+  );
+}
+
+/* Card hover */
+.card-architectural {
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-architectural:hover {
+  transform: translateY(-4px); /* More subtle lift */
+}
+
+/* Smooth fade in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Less travel distance for a sleeker feel */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes blurFadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 20s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-blur-fade-in {
+  opacity: 0;
+  animation: blurFadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-1000 { animation-delay: 1000ms; }
+.delay-\[1200ms\] { animation-delay: 1200ms; }
+
+/* Line separator */
+.line-separator {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+}
