@@ -43,11 +43,16 @@ export default function Sidebar() {
   return (
     <>
       {/* Mobile Header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-navy-900 flex items-center justify-between px-6 z-50 border-b border-[#a8d4e6]/20">
-        <Link href="/portal" className="text-white font-serif text-xl tracking-tight">SFC Travel</Link>
-        <button onClick={() => setIsOpen(!isOpen)} className="text-white p-2 -mr-2">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+      <div 
+        className="lg:hidden fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-xl flex items-center justify-between px-5 z-50 border-b border-navy-900/5 shadow-sm"
+        style={{ paddingTop: "env(safe-area-inset-top)" }}
+      >
+        <div className="flex items-center justify-between w-full h-14">
+          <Link href="/portal" className="text-navy-900 font-serif text-lg tracking-tight">SFC Travel</Link>
+          <button onClick={() => setIsOpen(!isOpen)} className="text-navy-900/70 p-2 -mr-2">
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {/* Desktop Sidebar */}

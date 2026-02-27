@@ -9,7 +9,7 @@ export default function CaptainsTablePage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
 
   return (
-    <div className="-mx-4 md:-mx-6 lg:-mx-12 -mt-24 lg:-mt-12 min-h-screen relative bg-navy-900 overflow-hidden flex flex-col">
+    <div className="-mx-3 sm:-mx-4 md:-mx-6 lg:-mx-12 -mt-20 md:-mt-24 lg:-mt-12 min-h-screen relative bg-navy-900 overflow-hidden flex flex-col">
       {/* Full Bleed Cinematic Background */}
       <div className="absolute inset-0 z-0">
         <img 
