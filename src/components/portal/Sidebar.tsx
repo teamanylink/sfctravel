@@ -32,6 +32,7 @@ export default function Sidebar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const isDashboard = pathname === "/portal";
+  const isCaptainsTable = pathname === "/portal/captains-table";
   const currentPage = navItems.find(item => item.href === pathname);
 
   useEffect(() => {
@@ -47,7 +48,11 @@ export default function Sidebar() {
     <>
       {/* Mobile Header — native iOS style */}
       <div 
-        className="lg:hidden fixed top-0 left-0 right-0 bg-[#fcfcfc]/70 backdrop-blur-2xl z-50"
+        className={`lg:hidden fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
+          isCaptainsTable 
+            ? "bg-navy-900/50 backdrop-blur-2xl border-b border-white/5" 
+            : "bg-[#fcfcfc]/70 backdrop-blur-2xl"
+        }`}
         style={{ paddingTop: "env(safe-area-inset-top)" }}
       >
         <div className="flex items-center justify-between h-11 px-4">
@@ -57,15 +62,21 @@ export default function Sidebar() {
           ) : (
             <Link 
               href="/portal" 
-              className="flex items-center justify-center w-9 h-9 rounded-full bg-white/60 backdrop-blur-xl border border-white/40 shadow-[0_1px_3px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] active:scale-90 transition-transform -ml-0.5"
+              className={`flex items-center justify-center w-9 h-9 rounded-full backdrop-blur-xl border shadow-[0_1px_3px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] active:scale-90 transition-transform -ml-0.5 ${
+                isCaptainsTable
+                  ? "bg-white/10 border-white/20"
+                  : "bg-white/60 border-white/40"
+              }`}
             >
-              <ChevronLeft size={18} strokeWidth={2.2} className="text-navy-900/70 -ml-0.5" />
+              <ChevronLeft size={18} strokeWidth={2.2} className={`-ml-0.5 ${isCaptainsTable ? "text-white" : "text-navy-900/70"}`} />
             </Link>
           )}
 
           {/* Center: Page title (sub-pages only) */}
           {!isDashboard && currentPage && (
-            <span className="absolute left-1/2 -translate-x-1/2 text-[17px] font-semibold text-navy-900 pointer-events-none">
+            <span className={`absolute left-1/2 -translate-x-1/2 text-[17px] font-semibold pointer-events-none ${
+              isCaptainsTable ? "text-white" : "text-navy-900"
+            }`}>
               {currentPage.name}
             </span>
           )}
@@ -73,7 +84,11 @@ export default function Sidebar() {
           {/* Right: Menu */}
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="text-navy-900/60 p-1.5 -mr-1.5 rounded-full active:bg-navy-900/5 transition-colors"
+            className={`p-1.5 -mr-1.5 rounded-full transition-colors ${
+              isCaptainsTable
+                ? "text-white/80 active:bg-white/10"
+                : "text-navy-900/60 active:bg-navy-900/5"
+            }`}
           >
             {isOpen ? <X size={22} strokeWidth={1.8} /> : <Menu size={22} strokeWidth={1.8} />}
           </button>

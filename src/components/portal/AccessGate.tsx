@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Lock, KeyRound, ArrowLeft } from "lucide-react";
+import { Lock, KeyRound } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 interface AccessGateProps {
@@ -24,16 +24,8 @@ export default function AccessGate({ onUnlock }: AccessGateProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy-900/80 backdrop-blur-2xl">
-      <button
-        onClick={() => router.push("/portal")}
-        className="absolute top-8 left-8 flex items-center gap-2 text-white/50 hover:text-white transition-colors group"
-      >
-        <ArrowLeft size={18} strokeWidth={1.5} className="group-hover:-translate-x-1 transition-transform" />
-        <span className="text-xs font-light tracking-[0.2em] uppercase">Back</span>
-      </button>
-      
-      <div className="bg-navy-900/40 backdrop-blur-xl p-12 rounded-[2rem] shadow-[0_0_80px_rgba(0,0,0,0.4)] border border-white/10 max-w-lg w-full mx-4 text-center relative overflow-hidden">
+    <div className="fixed inset-0 lg:left-64 z-[40] flex items-center justify-center bg-navy-900/95 backdrop-blur-3xl">
+      <div className="bg-white/5 backdrop-blur-xl p-8 sm:p-12 rounded-[2rem] shadow-[0_0_80px_rgba(0,0,0,0.4)] border border-white/10 max-w-lg w-full mx-4 text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-ocean-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-ocean-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/4 pointer-events-none" />
         
@@ -42,8 +34,8 @@ export default function AccessGate({ onUnlock }: AccessGateProps) {
             <Lock className="text-white/60" size={28} strokeWidth={1.5} />
           </div>
           
-          <h3 className="font-serif text-4xl text-white mb-4 tracking-tight">Restricted Access</h3>
-          <p className="text-base font-light text-white/60 mb-10 leading-relaxed max-w-sm mx-auto">
+          <h3 className="font-serif text-3xl sm:text-4xl text-white mb-4 tracking-tight">Restricted Access</h3>
+          <p className="text-sm sm:text-base font-light text-white/60 mb-8 sm:mb-10 leading-relaxed max-w-sm mx-auto">
             The Captain's Table is an invitation-only experience reserved for our highest tier members.
           </p>
 

@@ -24,17 +24,17 @@ export default function CaptainsTablePage() {
         <AccessGate onUnlock={() => setIsUnlocked(true)} />
       )}
 
-      <div className={`relative z-10 px-4 md:px-6 lg:px-12 pt-20 md:pt-32 lg:pt-40 pb-20 md:pb-32 transition-all duration-1000 flex-1 ${isUnlocked ? "opacity-100 blur-none" : "opacity-0 blur-xl pointer-events-none select-none"}`}>
+      <div className={`relative z-10 px-4 md:px-6 lg:px-12 pt-28 md:pt-32 lg:pt-40 pb-20 md:pb-32 transition-all duration-1000 flex-1 ${isUnlocked ? "opacity-100 blur-none" : "opacity-0 blur-xl pointer-events-none select-none"}`}>
         <div className="max-w-[1400px] mx-auto space-y-16 md:space-y-24 lg:space-y-32">
           {/* Hero Content */}
-          <div className="text-center max-w-4xl mx-auto pt-12">
-            <span className="inline-block px-4 py-2 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 text-[10px] text-white font-light tracking-[0.3em] uppercase mb-10">
+          <div className="text-center max-w-4xl mx-auto pt-4 sm:pt-12">
+            <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 text-[9px] sm:text-[10px] text-white font-light tracking-[0.3em] uppercase mb-6 sm:mb-10">
               By Invitation Only
             </span>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-[7rem] text-white mb-10 tracking-tight leading-[0.9]">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] text-white mb-6 sm:mb-10 tracking-tight leading-tight sm:leading-[0.9]">
               The Captain's Table
             </h1>
-            <p className="text-lg md:text-2xl font-light text-white/60 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-2xl font-light text-white/60 leading-relaxed max-w-3xl mx-auto px-4 sm:px-0">
               Exclusive access to private dinners with pro anglers, closed-door sponsor mixers, 
               and priority booking for the world's most sought-after charter fleets.
             </p>
@@ -42,14 +42,14 @@ export default function CaptainsTablePage() {
 
           {/* Events Grid */}
           <div>
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-white/10 pb-8 gap-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-16 border-b border-white/10 pb-6 sm:pb-8 gap-4 sm:gap-6 px-4 sm:px-0">
               <div>
-                <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">Upcoming Gatherings</h2>
-                <p className="text-lg font-light text-ocean-400">Secure your seat at our next exclusive event.</p>
+                <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-2 sm:mb-4">Upcoming Gatherings</h2>
+                <p className="text-base sm:text-lg font-light text-ocean-400">Secure your seat at our next exclusive event.</p>
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 px-4 sm:px-0">
               {mockCaptainsTableEvents.map(event => (
                 <VIPEventCard key={event.id} event={event} />
               ))}
@@ -57,7 +57,7 @@ export default function CaptainsTablePage() {
           </div>
 
           {/* Perks Callout */}
-          <div className="grid md:grid-cols-3 gap-8 md:gap-16 pt-12 md:pt-16 border-t border-white/10">
+          <div className="grid md:grid-cols-3 gap-10 md:gap-16 pt-12 md:pt-16 border-t border-white/10 px-4 sm:px-0">
             {[
               {
                 num: "01",
