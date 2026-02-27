@@ -44,11 +44,11 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center pb-20 px-6 lg:px-12 mt-16">
+      <div className="relative z-10 h-full flex flex-col justify-center pb-20 px-6 lg:px-12 mt-16 md:mt-0">
         <div className="max-w-7xl mx-auto w-full">
           <div className="max-w-4xl">
-            <div className="h-[120px] md:h-[160px] lg:h-[200px] xl:h-[240px] relative mb-6">
-              <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl xl:text-[6rem] font-medium leading-[1.15] tracking-[-0.02em] drop-shadow-2xl">
+            <div className="h-[140px] sm:h-[120px] md:h-[160px] lg:h-[200px] xl:h-[240px] relative mb-6">
+              <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6rem] font-medium leading-[1.15] tracking-[-0.02em] drop-shadow-2xl">
                 {/* Group 1 */}
                 <div className={`absolute inset-0 transition-[opacity,transform,filter] duration-1000 ease-in-out ${currentGroup === 0 ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 -translate-y-4 blur-sm pointer-events-none'}`}>
                   <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/60">From the seas,</span>
@@ -63,20 +63,20 @@ export default function Hero() {
               </h1>
             </div>
             
-            <p className="text-base md:text-lg lg:text-xl font-light text-white/80 max-w-2xl leading-relaxed mb-12 animate-blur-fade-in delay-1000 drop-shadow-lg">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light text-white/80 max-w-2xl leading-relaxed mb-10 md:mb-12 animate-blur-fade-in delay-1000 drop-shadow-lg">
               Book your next tournament trip and earn loyalty rewards, fly private to the best waters in the world, and unlock experiences built exclusively for anglers like you.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 animate-blur-fade-in delay-[1200ms]">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-blur-fade-in delay-[1200ms]">
               <a 
                 href="/login" 
-                className="bg-[#a8d4e6] text-navy-900 text-xs font-medium tracking-[0.2em] uppercase py-4 px-10 rounded-full hover:bg-white transition-all duration-500 text-center shadow-[0_0_30px_rgba(168,212,230,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] hover:-translate-y-1"
+                className="bg-[#a8d4e6] text-navy-900 text-xs font-medium tracking-[0.2em] uppercase py-4 px-8 sm:px-10 rounded-full hover:bg-white transition-all duration-500 text-center shadow-[0_0_30px_rgba(168,212,230,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] hover:-translate-y-1 w-full sm:w-auto"
               >
                 Sign In
               </a>
               <a 
                 href="#packages" 
-                className="border border-white/30 text-white text-xs font-medium tracking-[0.2em] uppercase py-4 px-10 rounded-full hover:bg-white/10 transition-all duration-500 text-center backdrop-blur-sm hover:-translate-y-1"
+                className="border border-white/30 text-white text-xs font-medium tracking-[0.2em] uppercase py-4 px-8 sm:px-10 rounded-full hover:bg-white/10 transition-all duration-500 text-center backdrop-blur-sm hover:-translate-y-1 w-full sm:w-auto"
               >
                 Explore Benefits
               </a>

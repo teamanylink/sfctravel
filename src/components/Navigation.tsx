@@ -48,7 +48,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button 
-            className={`md:hidden transition-colors duration-500 ${scrolled ? "text-navy-900" : "text-white"}`}
+            className={`md:hidden transition-colors duration-500 z-[60] relative ${scrolled || isOpen ? "text-navy-900" : "text-white"}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             <span className="text-xs font-light tracking-[0.2em] uppercase">
@@ -57,22 +57,44 @@ export default function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden py-8 border-t border-navy-900/10 bg-[#fcfcfc] absolute top-full left-0 w-full px-6 shadow-2xl">
-            <div className="flex flex-col gap-8">
-              <a href="#benefits" className="text-sm font-light tracking-widest uppercase text-navy-900/70 hover:text-navy-900 transition-colors">
+        {/* Mobile Bottom Sheet Menu */}
+        <div 
+          className={`md:hidden fixed inset-0 bg-navy-900/40 backdrop-blur-sm z-40 transition-opacity duration-500 ${
+            isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+          onClick={() => setIsOpen(false)}
+        />
+        <div 
+          className={`md:hidden fixed bottom-0 left-0 right-0 bg-[#fcfcfc] rounded-t-3xl z-50 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+            isOpen ? "translate-y-0" : "translate-y-full"
+          }`}
+        >
+          <div className="p-8 pb-12">
+            <div className="w-12 h-1 bg-navy-900/10 rounded-full mx-auto mb-8" />
+            <div className="flex flex-col gap-6">
+              <a 
+                href="#benefits" 
+                onClick={() => setIsOpen(false)}
+                className="text-lg font-light tracking-widest uppercase text-navy-900/70 hover:text-navy-900 transition-colors py-2"
+              >
                 Member Benefits
               </a>
-              <a href="#packages" className="text-sm font-light tracking-widest uppercase text-navy-900/70 hover:text-navy-900 transition-colors">
+              <a 
+                href="#packages" 
+                onClick={() => setIsOpen(false)}
+                className="text-lg font-light tracking-widest uppercase text-navy-900/70 hover:text-navy-900 transition-colors py-2"
+              >
                 Experiences
               </a>
-              <a href="/login" className="text-sm font-medium tracking-widest uppercase text-navy-900 bg-[#a8d4e6] py-3 px-6 rounded-lg text-center mt-4">
+              <a 
+                href="/login" 
+                className="text-sm font-medium tracking-widest uppercase text-navy-900 bg-[#a8d4e6] py-4 px-6 rounded-full text-center mt-4 shadow-[0_0_20px_rgba(168,212,230,0.3)]"
+              >
                 Sign In
               </a>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
