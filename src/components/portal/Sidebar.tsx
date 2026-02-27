@@ -57,10 +57,9 @@ export default function Sidebar() {
           ) : (
             <Link 
               href="/portal" 
-              className="flex items-center gap-0.5 -ml-1.5 active:opacity-50 transition-opacity"
+              className="flex items-center justify-center w-9 h-9 rounded-full bg-white/60 backdrop-blur-xl border border-white/40 shadow-[0_1px_3px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] active:scale-90 transition-transform -ml-0.5"
             >
-              <ChevronLeft size={22} strokeWidth={2.5} className="text-[#007AFF]" />
-              <span className="text-[17px] text-[#007AFF]">Dashboard</span>
+              <ChevronLeft size={18} strokeWidth={2.2} className="text-navy-900/70 -ml-0.5" />
             </Link>
           )}
 
