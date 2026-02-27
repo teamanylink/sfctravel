@@ -57,16 +57,18 @@ export default function LoginPage() {
       </div>
 
       {/* Right Side - Login Form */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center p-8 sm:p-16 xl:p-24 relative">
+      <div className="w-full lg:w-1/2 flex flex-col p-6 sm:p-12 lg:p-16 xl:p-24 relative">
         {/* Mobile Logo */}
-        <div className="lg:hidden absolute top-8 left-8">
-          <Link href="/" className="flex items-center gap-3 text-navy-900">
-            <Anchor className="text-[#a8d4e6]" size={24} />
-            <span className="text-xl font-serif tracking-wide">SFC Travel</span>
-          </Link>
+        <div className="lg:hidden pt-[env(safe-area-inset-top)] mb-4">
+          <div className="pt-4">
+            <Link href="/" className="flex items-center gap-3 text-navy-900">
+              <Anchor className="text-[#a8d4e6]" size={24} />
+              <span className="text-xl font-serif tracking-wide">SFC Travel</span>
+            </Link>
+          </div>
         </div>
 
-        <div className="max-w-md w-full mx-auto space-y-10">
+        <div className="max-w-md w-full mx-auto space-y-8 sm:space-y-10 flex-1 flex flex-col justify-center">
           <div>
             <h2 className="text-3xl font-serif text-navy-900 mb-3">Welcome Back</h2>
             <p className="text-navy-900/60 font-light">
