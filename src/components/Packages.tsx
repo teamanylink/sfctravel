@@ -63,14 +63,14 @@ export default function Packages() {
   }, []);
 
   return (
-    <section id="packages" className="bg-[#fcfcfc] py-32 lg:py-48 relative z-20">
+    <section id="packages" className="bg-[#fcfcfc] py-20 md:py-32 lg:py-48 relative z-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-12" ref={ref}>
         {/* Header */}
         <div className={`mb-24 lg:mb-32 transition-all duration-[1.5s] ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}>
           <p className="text-xs font-light tracking-[0.3em] text-navy-900/40 uppercase mb-6">
             Member Experiences
           </p>
-          <h2 className="font-serif text-5xl lg:text-7xl font-light text-navy-900 tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light text-navy-900 tracking-tight">
             The Portal Advantage
           </h2>
         </div>
@@ -98,7 +98,7 @@ export default function Packages() {
               </div>
 
               {/* Content */}
-              <div className="absolute inset-0 p-10 lg:p-16 flex flex-col justify-end">
+              <div className="absolute inset-0 p-6 md:p-10 lg:p-16 flex flex-col justify-end">
                 <div className="flex items-baseline justify-between mb-6">
                   <span className="text-xs font-light tracking-[0.2em] text-white/50 uppercase">
                     {pkg.duration}
@@ -108,7 +108,7 @@ export default function Packages() {
                   </span>
                 </div>
 
-                <h3 className="font-serif text-4xl lg:text-6xl font-light text-white mb-4 tracking-tight">
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-light text-white mb-4 tracking-tight">
                   {pkg.name}
                 </h3>
                 <p className="text-sm font-light tracking-[0.1em] text-[#a8d4e6] uppercase mb-6">

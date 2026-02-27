@@ -13,7 +13,7 @@ export default function PortalLayout({
       
       <div className="flex-1 lg:ml-64 flex flex-col min-h-screen">
         {/* Topbar */}
-        <header className="h-24 px-8 flex items-center justify-between border-b border-navy-900/5 bg-white/50 backdrop-blur-md sticky top-0 z-30 hidden lg:flex">
+        <header className="h-24 px-4 sm:px-6 lg:px-8 flex items-center justify-between border-b border-navy-900/5 bg-white/50 backdrop-blur-md sticky top-0 z-30 hidden lg:flex">
           <div>
             <h1 className="text-xl font-serif text-navy-900">Welcome back, {mockMember.name.split(' ')[0]}</h1>
             <p className="text-sm font-light text-navy-900/60 mt-1">{mockMember.organization}</p>
@@ -33,7 +33,7 @@ export default function PortalLayout({
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 p-4 md:p-6 lg:p-12 pt-24 lg:pt-12 overflow-x-hidden">
+        <main className="flex-1 p-3 sm:p-4 md:p-6 lg:p-12 pt-20 md:pt-24 lg:pt-12 overflow-x-hidden">
           {children}
         </main>
       </div>

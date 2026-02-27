@@ -30,7 +30,7 @@ export default function WalletPage() {
                   </div>
                   <div>
                     <p className="text-[10px] font-medium tracking-[0.2em] text-navy-900/40 mb-1.5 uppercase">YTD Earned</p>
-                    <p className="font-serif text-3xl text-navy-900">${mockMember.ytdRebates.toLocaleString()}</p>
+                    <p className="font-serif text-2xl sm:text-3xl text-navy-900">${mockMember.ytdRebates.toLocaleString()}</p>
                   </div>
                 </div>
 
@@ -40,7 +40,7 @@ export default function WalletPage() {
                   </div>
                   <div>
                     <p className="text-[10px] font-medium tracking-[0.2em] text-navy-900/40 mb-1.5 uppercase">Pending Processing</p>
-                    <p className="font-serif text-3xl text-navy-900">$4,250</p>
+                    <p className="font-serif text-2xl sm:text-3xl text-navy-900">$4,250</p>
                   </div>
                 </div>
 
@@ -50,7 +50,7 @@ export default function WalletPage() {
                   </div>
                   <div>
                     <p className="text-[10px] font-medium tracking-[0.2em] text-navy-900/40 mb-1.5 uppercase">Lifetime Earned</p>
-                    <p className="font-serif text-3xl text-navy-900">${(mockMember.lifetimeSpend * 0.035).toLocaleString()}</p>
+                    <p className="font-serif text-2xl sm:text-3xl text-navy-900">${(mockMember.lifetimeSpend * 0.035).toLocaleString()}</p>
                   </div>
                 </div>
               </div>

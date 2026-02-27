@@ -27,13 +27,17 @@
 
 html {
   scroll-behavior: smooth;
+  min-width: 320px;
 }
 
 body {
-  background: #fcfcfc; /* Slightly brighter, cleaner white */
+  background: #fcfcfc;
   font-feature-settings: 'kern' 1, 'liga' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 /* Swiss-style typography */

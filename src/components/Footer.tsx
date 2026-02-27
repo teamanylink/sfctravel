@@ -1,11 +1,11 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#0a1628] py-24">
+    <footer className="bg-[#0a1628] py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid md:grid-cols-3 gap-16 mb-16">
+        <div className="grid md:grid-cols-3 gap-10 md:gap-16 mb-16">
           {/* Brand */}
           <div>
-            <h3 className="text-3xl font-light text-white mb-2 tracking-tight">
+            <h3 className="text-2xl sm:text-3xl font-light text-white mb-2 tracking-tight">
               SFC Travel
             </h3>
             <p className="text-sm font-light text-[#a8d4e6] mb-6">powered by CTMS</p>

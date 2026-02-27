@@ -124,7 +124,7 @@ export default function Sidebar() {
           <div className="w-12 h-1 bg-white/20 rounded-full mx-auto" />
         </div>
 
-        <div className="flex-1 overflow-y-auto px-6 pb-8">
+        <div className="flex-1 overflow-y-auto px-6 pb-8" style={{ paddingBottom: "max(2rem, env(safe-area-inset-bottom))" }}>
           {/* Member Info */}
           <div className="flex items-center gap-4 py-5 mb-2 border-b border-white/10">
             <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#a8d4e6] to-[#0a1628] flex items-center justify-center text-white font-serif text-lg">

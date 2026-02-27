@@ -13,7 +13,7 @@ export default function CharterPage() {
 
       <CharterBookingFlow />
 
-      <div className="bg-white rounded-3xl border border-navy-900/5 shadow-sm p-12 mt-12 text-center">
+      <div className="bg-white rounded-3xl border border-navy-900/5 shadow-sm p-6 md:p-10 lg:p-12 mt-12 text-center">
         <h3 className="font-serif text-2xl text-navy-900 mb-8">The Charter Advantage</h3>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="space-y-4">

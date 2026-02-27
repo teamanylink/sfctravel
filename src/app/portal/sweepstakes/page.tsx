@@ -28,12 +28,12 @@ export default function SweepstakesPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/90 to-navy-900/20" />
         </div>
         
-        <div className="relative z-10 p-8 md:p-16 lg:p-24 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-16">
+        <div className="relative z-10 p-6 md:p-12 lg:p-20 xl:p-24 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 md:gap-16">
           <div className="max-w-2xl">
             <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 text-[10px] text-white font-light tracking-[0.2em] uppercase mb-8">
               Grand Prize Draw
             </span>
-            <h2 className="font-serif text-5xl lg:text-7xl text-white mb-6 tracking-tight leading-[1.1]">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-6 tracking-tight leading-[1.1]">
               {featuredSweepstakes.title}
             </h2>
             <p className="text-xl font-light text-white/70 mb-12 leading-relaxed max-w-xl">
@@ -45,12 +45,12 @@ export default function SweepstakesPage() {
               <CountdownTimer deadline={featuredSweepstakes.deadline} />
             </div>
 
-            <button className="px-10 py-5 bg-white text-navy-900 text-[11px] font-medium tracking-[0.2em] uppercase rounded-2xl hover:bg-white/90 hover:scale-105 transition-all duration-500 shadow-[0_10px_40px_rgba(255,255,255,0.2)]">
+            <button className="px-6 sm:px-8 md:px-10 py-4 md:py-5 bg-white text-navy-900 text-[11px] font-medium tracking-[0.2em] uppercase rounded-2xl hover:bg-white/90 hover:scale-105 transition-all duration-500 shadow-[0_10px_40px_rgba(255,255,255,0.2)]">
               Apply Entries Now
             </button>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 text-center min-w-[280px] shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
+          <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 md:p-10 text-center w-full lg:min-w-[280px] lg:w-auto shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
             <p className="text-[10px] font-light tracking-[0.2em] text-white/50 uppercase mb-3">Prize Value</p>
             <p className="font-serif text-5xl text-white mb-8">{featuredSweepstakes.value}</p>
             

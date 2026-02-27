@@ -21,7 +21,7 @@ export default function AnalyticsPage() {
           <p className="text-lg font-light text-navy-900/60">High-level commercial insights and portal performance.</p>
         </div>
         
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-3 md:gap-4">
           <button 
             onClick={() => handleExport('csv')}
             className="flex items-center gap-2 px-6 py-3 bg-white border border-navy-900/10 text-navy-900 text-xs font-medium tracking-[0.2em] uppercase rounded-lg hover:border-navy-900/30 transition-colors shadow-sm"

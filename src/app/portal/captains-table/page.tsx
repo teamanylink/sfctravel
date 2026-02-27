@@ -24,14 +24,14 @@ export default function CaptainsTablePage() {
         <AccessGate onUnlock={() => setIsUnlocked(true)} />
       )}
 
-      <div className={`relative z-10 px-6 lg:px-12 pt-32 lg:pt-40 pb-32 transition-all duration-1000 flex-1 ${isUnlocked ? "opacity-100 blur-none" : "opacity-0 blur-xl pointer-events-none select-none"}`}>
-        <div className="max-w-[1400px] mx-auto space-y-32">
+      <div className={`relative z-10 px-4 md:px-6 lg:px-12 pt-20 md:pt-32 lg:pt-40 pb-20 md:pb-32 transition-all duration-1000 flex-1 ${isUnlocked ? "opacity-100 blur-none" : "opacity-0 blur-xl pointer-events-none select-none"}`}>
+        <div className="max-w-[1400px] mx-auto space-y-16 md:space-y-24 lg:space-y-32">
           {/* Hero Content */}
           <div className="text-center max-w-4xl mx-auto pt-12">
             <span className="inline-block px-4 py-2 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 text-[10px] text-white font-light tracking-[0.3em] uppercase mb-10">
               By Invitation Only
             </span>
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-[7rem] text-white mb-10 tracking-tight leading-[0.9]">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-[7rem] text-white mb-10 tracking-tight leading-[0.9]">
               The Captain's Table
             </h1>
             <p className="text-lg md:text-2xl font-light text-white/60 leading-relaxed max-w-3xl mx-auto">
@@ -57,7 +57,7 @@ export default function CaptainsTablePage() {
           </div>
 
           {/* Perks Callout */}
-          <div className="grid md:grid-cols-3 gap-16 pt-16 border-t border-white/10">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-16 pt-12 md:pt-16 border-t border-white/10">
             {[
               {
                 num: "01",

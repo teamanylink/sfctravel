@@ -70,26 +70,26 @@ export default function Experience() {
   }, []);
 
   return (
-    <section id="benefits" className="py-32 lg:py-48 relative overflow-hidden bg-navy-900">
+    <section id="benefits" className="py-20 md:py-32 lg:py-48 relative overflow-hidden bg-navy-900">
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12" ref={ref}>
         {/* Header */}
-        <div className={`mb-24 lg:mb-32 transition-all duration-[1.5s] ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}>
+        <div className={`mb-16 md:mb-24 lg:mb-32 transition-all duration-[1.5s] ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}>
           <p className="text-xs font-light tracking-[0.3em] text-white/40 uppercase mb-6">
             Why SFC Travel
           </p>
-          <h2 className="font-serif text-5xl lg:text-7xl font-light text-white mb-8 tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light text-white mb-8 tracking-tight">
             Travel More.<br />Earn More. Fish Better.
           </h2>
-          <p className="text-xl font-light text-white/50 max-w-2xl leading-relaxed">
+          <p className="text-base md:text-xl font-light text-white/50 max-w-2xl leading-relaxed">
             SFC Travel is a members-only portal built around the fishing community. Every trip you book earns loyalty rewards, unlocks exclusive access, and puts money back in your pocket — automatically.
           </p>
         </div>
 
         {/* Stats Bar */}
-        <div className={`grid grid-cols-2 lg:grid-cols-4 gap-12 mb-32 py-16 border-t border-b border-white/5 transition-all duration-[1.5s] delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}>
+        <div className={`grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 mb-16 md:mb-32 py-10 md:py-16 border-t border-b border-white/5 transition-all duration-[1.5s] delay-300 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}>
           {stats.map((stat, index) => (
             <div key={index} className="text-center lg:text-left">
-              <div className="font-serif text-4xl lg:text-5xl font-light text-white mb-4 tracking-tight">
+              <div className="font-serif text-2xl sm:text-3xl lg:text-5xl font-light text-white mb-4 tracking-tight">
                 {stat.value}
               </div>
               <div className="text-xs font-light text-white/40 tracking-[0.2em] uppercase">
@@ -111,7 +111,7 @@ export default function Experience() {
               <div className="w-12 h-12 mb-8 text-[#a8d4e6]/50 group-hover:text-[#a8d4e6] transition-colors duration-500">
                 {feature.icon}
               </div>
-              <h3 className="font-serif text-3xl font-light text-white mb-4 tracking-tight">{feature.title}</h3>
+              <h3 className="font-serif text-2xl sm:text-3xl font-light text-white mb-4 tracking-tight">{feature.title}</h3>
               <p className="text-base font-light text-white/50 leading-relaxed max-w-md">{feature.description}</p>
             </div>
           ))}
