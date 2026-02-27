@@ -146,25 +146,25 @@ export default function Sidebar() {
 
       {/* Mobile Bottom Sheet */}
       <div 
-        className={`lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-navy-900 rounded-t-3xl transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] max-h-[85dvh] flex flex-col ${
+        className={`lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#fcfcfc] rounded-t-3xl transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] max-h-[85dvh] flex flex-col shadow-[0_-8px_30px_rgba(0,0,0,0.12)] ${
           isOpen ? "translate-y-0" : "translate-y-full"
         }`}
       >
         <div className="pt-4 pb-2 flex-shrink-0">
-          <div className="w-12 h-1 bg-white/20 rounded-full mx-auto" />
+          <div className="w-12 h-1 bg-navy-900/20 rounded-full mx-auto" />
         </div>
 
         <div className="flex-1 overflow-y-auto px-6 pb-8" style={{ paddingBottom: "max(2rem, env(safe-area-inset-bottom))" }}>
           {/* Member Info */}
-          <div className="flex items-center gap-4 py-5 mb-2 border-b border-white/10">
-            <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#a8d4e6] to-[#0a1628] flex items-center justify-center text-white font-serif text-lg">
+          <div className="flex items-center gap-4 py-5 mb-2 border-b border-navy-900/10">
+            <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#a8d4e6] to-[#0a1628] flex items-center justify-center text-white font-serif text-lg shadow-sm">
               {mockMember.name.charAt(0)}
             </div>
             <div>
-              <p className="text-base text-white font-light">{mockMember.name}</p>
+              <p className="text-base text-navy-900 font-medium">{mockMember.name}</p>
               <div className="flex items-center gap-2 mt-0.5">
-                <span className="w-2 h-2 rounded-full bg-yellow-400"></span>
-                <span className="text-xs text-white/50 tracking-wider uppercase">{mockMember.tier} Member</span>
+                <span className="w-2 h-2 rounded-full bg-yellow-400 shadow-sm"></span>
+                <span className="text-xs text-navy-900/50 tracking-wider uppercase font-medium">{mockMember.tier} Member</span>
               </div>
             </div>
           </div>
@@ -182,27 +182,27 @@ export default function Sidebar() {
                   className={`
                     flex items-center gap-4 px-4 py-3.5 rounded-xl transition-colors
                     ${isActive 
-                      ? "bg-[#a8d4e6]/10 text-[#a8d4e6]" 
-                      : "text-white/60 hover:text-white hover:bg-white/5"
+                      ? "bg-navy-900/5 text-navy-900 font-medium" 
+                      : "text-navy-900/60 hover:text-navy-900 hover:bg-navy-900/5"
                     }
                   `}
                 >
                   <Icon size={20} strokeWidth={isActive ? 2 : 1.5} />
-                  <span className="text-base font-light tracking-wide">{item.name}</span>
+                  <span className="text-base tracking-wide">{item.name}</span>
                 </Link>
               );
             })}
           </nav>
 
           {/* Sign Out */}
-          <div className="mt-4 pt-4 border-t border-white/10">
+          <div className="mt-4 pt-4 border-t border-navy-900/10">
             <Link 
               href="/login"
               onClick={() => setIsOpen(false)}
-              className="flex items-center gap-4 px-4 py-3 rounded-xl text-white/40 hover:text-white hover:bg-white/5 transition-colors w-full"
+              className="flex items-center gap-4 px-4 py-3 rounded-xl text-navy-900/50 hover:text-navy-900 hover:bg-navy-900/5 transition-colors w-full"
             >
               <LogOut size={20} strokeWidth={1.5} />
-              <span className="text-base font-light tracking-wide">Sign Out</span>
+              <span className="text-base tracking-wide">Sign Out</span>
             </Link>
           </div>
         </div>
