@@ -15,39 +15,43 @@ export default function WalletPage() {
       <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
         {/* Left Column: Card & Summary */}
         <div className="space-y-6 md:space-y-8">
-          <VirtualCard />
-          
-          <div className="bg-white rounded-2xl border border-navy-900/5 shadow-sm p-6 md:p-8">
-            <h3 className="text-xs font-medium tracking-[0.2em] text-navy-900/40 uppercase mb-6">Rebate Summary</h3>
+          <div className="bg-white rounded-[2rem] border border-navy-900/5 shadow-sm p-6 md:p-8">
+            <div className="mb-8">
+              <VirtualCard />
+            </div>
             
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-[#fcfcfc] border border-navy-900/5 hover:border-navy-900/10 transition-colors">
-                <div className="p-3 bg-green-50 rounded-xl text-green-600 shrink-0">
-                  <ArrowUpRight size={20} strokeWidth={2} />
+            <div>
+              <h3 className="text-[11px] font-medium tracking-[0.2em] text-navy-900/40 uppercase mb-6">Rebate Summary</h3>
+              
+              <div className="space-y-4">
+                <div className="flex items-start gap-5 p-5 rounded-2xl bg-white border border-navy-900/5 hover:border-navy-900/10 transition-colors shadow-sm">
+                  <div className="p-3 bg-green-50/50 rounded-xl text-green-600 shrink-0">
+                    <ArrowUpRight size={20} strokeWidth={2} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-medium tracking-[0.2em] text-navy-900/40 mb-1.5 uppercase">YTD Earned</p>
+                    <p className="font-serif text-3xl text-navy-900">${mockMember.ytdRebates.toLocaleString()}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs md:text-sm font-medium tracking-wide text-navy-900/60 mb-1 uppercase">YTD Earned</p>
-                  <p className="font-serif text-2xl md:text-3xl text-navy-900">${mockMember.ytdRebates.toLocaleString()}</p>
-                </div>
-              </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-[#fcfcfc] border border-navy-900/5 hover:border-navy-900/10 transition-colors">
-                <div className="p-3 bg-yellow-50 rounded-xl text-yellow-600 shrink-0">
-                  <Clock size={20} strokeWidth={2} />
+                <div className="flex items-start gap-5 p-5 rounded-2xl bg-white border border-navy-900/5 hover:border-navy-900/10 transition-colors shadow-sm">
+                  <div className="p-3 bg-yellow-50/50 rounded-xl text-yellow-600 shrink-0">
+                    <Clock size={20} strokeWidth={2} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-medium tracking-[0.2em] text-navy-900/40 mb-1.5 uppercase">Pending Processing</p>
+                    <p className="font-serif text-3xl text-navy-900">$4,250</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs md:text-sm font-medium tracking-wide text-navy-900/60 mb-1 uppercase">Pending Processing</p>
-                  <p className="font-serif text-2xl md:text-3xl text-navy-900">$4,250</p>
-                </div>
-              </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-[#fcfcfc] border border-navy-900/5 hover:border-navy-900/10 transition-colors">
-                <div className="p-3 bg-navy-50 rounded-xl text-navy-600 shrink-0">
-                  <History size={20} strokeWidth={2} />
-                </div>
-                <div>
-                  <p className="text-xs md:text-sm font-medium tracking-wide text-navy-900/60 mb-1 uppercase">Lifetime Earned</p>
-                  <p className="font-serif text-2xl md:text-3xl text-navy-900">${(mockMember.lifetimeSpend * 0.035).toLocaleString()}</p>
+                <div className="flex items-start gap-5 p-5 rounded-2xl bg-white border border-navy-900/5 hover:border-navy-900/10 transition-colors shadow-sm">
+                  <div className="p-3 bg-navy-50/50 rounded-xl text-navy-600 shrink-0">
+                    <History size={20} strokeWidth={2} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-medium tracking-[0.2em] text-navy-900/40 mb-1.5 uppercase">Lifetime Earned</p>
+                    <p className="font-serif text-3xl text-navy-900">${(mockMember.lifetimeSpend * 0.035).toLocaleString()}</p>
+                  </div>
                 </div>
               </div>
             </div>

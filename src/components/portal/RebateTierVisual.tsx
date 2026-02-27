@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 
 export default function RebateTierVisual() {
   return (
-    <div className="bg-white rounded-2xl border border-navy-900/5 shadow-sm p-5 md:p-8">
+    <div className="bg-white rounded-[2rem] border border-navy-900/5 shadow-sm p-6 md:p-8">
       <div className="mb-6 md:mb-8">
         <h3 className="font-serif text-xl text-navy-900 mb-2">Rebate Structure</h3>
         <p className="text-sm font-light text-navy-900/60">Your rebate percentage increases as your lifetime travel volume grows.</p>
@@ -17,10 +17,10 @@ export default function RebateTierVisual() {
           return (
             <div 
               key={tier.name}
-              className={`p-5 md:p-6 rounded-xl border transition-all ${
+              className={`p-6 md:p-8 rounded-2xl border transition-all ${
                 isCurrent 
-                  ? "border-navy-900 bg-navy-900/5 shadow-sm" 
-                  : "border-navy-900/5 bg-[#fcfcfc]"
+                  ? "border-navy-900/10 bg-[#fafafa] shadow-sm" 
+                  : "border-navy-900/5 bg-white"
               }`}
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 md:mb-6">
@@ -38,17 +38,17 @@ export default function RebateTierVisual() {
                   <span className={`font-serif text-2xl md:text-3xl ${isCurrent ? "text-navy-900" : "text-navy-900/60"}`}>
                     {tier.rebatePercentage}%
                   </span>
-                  <span className="text-xs font-light tracking-wide text-navy-900/40 sm:ml-1 uppercase">rebate</span>
+                  <span className="text-[10px] font-medium tracking-[0.1em] text-navy-900/40 sm:ml-2 uppercase">REBATE</span>
                 </div>
               </div>
 
-              <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 pt-4 border-t border-navy-900/5">
-                <p className="text-xs font-medium tracking-[0.1em] text-navy-900/50 uppercase">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 pt-6 border-t border-navy-900/5">
+                <p className="text-[10px] font-medium tracking-[0.15em] text-navy-900/40 uppercase">
                   {tier.threshold === 0 ? "Entry Level" : `$${(tier.threshold / 1000).toLocaleString()}k+ Volume`}
                 </p>
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
                   {tier.perks.map((perk, i) => (
-                    <div key={i} className="flex items-center gap-1.5 text-xs font-light text-navy-900/70 bg-white px-2.5 py-1 rounded-md border border-navy-900/5">
+                    <div key={i} className="flex items-center gap-2 text-[11px] font-medium tracking-wide text-navy-900/60 bg-white px-3 py-1.5 rounded-md border border-navy-900/5">
                       <Check size={12} className={isCurrent || isPast ? "text-green-600" : "text-navy-900/30"} />
                       {perk}
                     </div>
