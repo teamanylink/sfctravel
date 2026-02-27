@@ -17,6 +17,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "SFC Travel powered by CTMS | Members Travel Portal",
   description: "Exclusive member travel portal powered by CTMS. Tiered rebates, private aviation, concierge experiences, and sustainability reporting for athletes, fans, and partners.",
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: "SFC Travel powered by CTMS",
     description: "The ultimate competitive fishing experience. Access your exclusive tournaments, manage private charters, and unlock premium rewards.",

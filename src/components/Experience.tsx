@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const features = [
   {
@@ -49,6 +50,7 @@ const stats = [
 ];
 
 export default function Experience() {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -102,8 +104,9 @@ export default function Experience() {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className={`group transition-all duration-[1.5s] ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}
+              className={`group cursor-pointer transition-all duration-[1.5s] ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}
               style={{ transitionDelay: `${500 + index * 150}ms` }}
+              onClick={() => router.push("/login")}
             >
               <div className="w-12 h-12 mb-8 text-[#a8d4e6]/50 group-hover:text-[#a8d4e6] transition-colors duration-500">
                 {feature.icon}

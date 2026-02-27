@@ -32,13 +32,9 @@ export default function Statement() {
         <p className="text-xs font-light tracking-[0.3em] text-navy-900/40 uppercase mb-16">
           Built for the Fishing Community
         </p>
-        <p className="text-swiss text-4xl md:text-5xl lg:text-[4rem] text-navy-900 leading-[1.1] tracking-tight">
-          Every trip you take earns you something back —
-          <br className="hidden md:block" />
-          loyalty rewards, exclusive access, and savings
-          <br className="hidden md:block" />
-          that grow the more you fish.
-        </p>
+        <h2 className="text-swiss text-4xl md:text-5xl lg:text-[4rem] text-navy-900 leading-[1.1] tracking-tight">
+          Every trip you take earns you something back — <span className="text-navy-900/40">loyalty rewards, exclusive access, and savings</span> that grow the more you fish.
+        </h2>
       </div>
       
       {/* Subtle architectural lines */}

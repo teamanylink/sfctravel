@@ -1,10 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-interface PackagesProps {
-  onSelectPackage: (pkg: string) => void;
-}
+import { useRouter } from "next/navigation";
 
 const packages = [
   {
@@ -45,7 +42,8 @@ const packages = [
   },
 ];
 
-export default function Packages({ onSelectPackage }: PackagesProps) {
+export default function Packages() {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -87,7 +85,7 @@ export default function Packages({ onSelectPackage }: PackagesProps) {
                 top: `calc(12vh + ${index * 2}rem)`,
                 transitionDelay: `${index * 200}ms`
               }}
-              onClick={() => onSelectPackage(pkg.id)}
+              onClick={() => router.push("/login")}
             >
               {/* Background Image */}
               <div className="absolute inset-0 overflow-hidden">

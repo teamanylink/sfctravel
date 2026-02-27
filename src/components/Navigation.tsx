@@ -27,15 +27,10 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <Anchor className={`transition-colors duration-700 ${scrolled ? "text-[#a8d4e6]" : "text-[#a8d4e6]"}`} size={32} />
-            <div className="flex flex-col">
-              <span className={`text-2xl md:text-3xl font-sans font-bold tracking-tight transition-colors duration-700 ${scrolled ? "text-navy-900" : "text-white"}`}>
-                SFC TRAVEL
-              </span>
-              <span className={`text-[9px] md:text-[11px] font-semibold tracking-[0.3em] uppercase transition-colors duration-700 ${scrolled ? "text-navy-900/50" : "text-white/70"} mt-0.5`}>
-                powered by CTMS
-              </span>
-            </div>
+            <Anchor className="text-[#a8d4e6] transition-colors duration-700" size={28} />
+            <span className={`text-2xl font-serif tracking-wide transition-colors duration-700 ${scrolled ? "text-navy-900" : "text-white"}`}>
+              SFC Travel
+            </span>
           </a>
 
           {/* Desktop Menu */}

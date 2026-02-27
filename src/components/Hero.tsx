@@ -1,15 +1,44 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
+const heroSlides = [
+  {
+    src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2000&q=80",
+    alt: "Luxury Sportfishing Yacht",
+  },
+  {
+    src: "https://d27kdz5bm9.ufs.sh/f/dXaM68H4SPa9O8CMAdbMKQWsfY6InkiR7tZh2C0NVJHLEdgq",
+    alt: "Private Aviation",
+  },
+];
+
 export default function Hero() {
+  const [currentGroup, setCurrentGroup] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCurrentGroup(1);
+    }, 3500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative h-screen w-full overflow-hidden bg-navy-900">
-      {/* Background Image */}
+      {/* Background Carousel */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2000&q=80"
-          alt="Luxury Sportfishing Yacht"
-          className="w-full h-full object-cover opacity-60 animate-scale-in"
-        />
+        {heroSlides.map((slide, i) => (
+          <img
+            key={i}
+            src={slide.src}
+            alt={slide.alt}
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-[2000ms] ease-in-out ${
+              currentGroup === i
+                ? "opacity-60 scale-100 blur-0"
+                : "opacity-0 scale-105 blur-md"
+            } ${i === 0 ? "animate-scale-in" : ""}`}
+          />
+        ))}
         <div className="absolute inset-0 bg-navy-900/60" />
         <div className="absolute inset-0 bg-gradient-to-b from-navy-900/80 via-navy-900/20 to-navy-900/90" />
       </div>
@@ -17,13 +46,24 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center pb-20 px-6 lg:px-12 mt-16">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="max-w-5xl">
-            <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-semibold text-white leading-[1.05] mb-8 tracking-tight drop-shadow-2xl">
-              <span className="block animate-blur-fade-in">From the sky to the seas,</span>
-              <span className="block animate-blur-fade-in delay-700 text-[#a8d4e6] mt-2 xl:mt-4">your next adventure starts here.</span>
-            </h1>
+          <div className="max-w-4xl">
+            <div className="h-[120px] md:h-[160px] lg:h-[200px] xl:h-[240px] relative mb-6">
+              <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl xl:text-[6rem] font-medium leading-[1.15] tracking-[-0.02em] drop-shadow-2xl">
+                {/* Group 1 */}
+                <div className={`absolute inset-0 transition-all duration-1000 ease-in-out ${currentGroup === 0 ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 -translate-y-4 blur-sm pointer-events-none'}`}>
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/60 drop-shadow-sm">From the seas,</span>
+                  <span className="block text-[#a8d4e6] mt-1 md:mt-2">to the skies.</span>
+                </div>
+                
+                {/* Group 2 */}
+                <div className={`absolute inset-0 transition-all duration-1000 ease-in-out ${currentGroup === 1 ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-4 blur-sm pointer-events-none'}`}>
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/60 drop-shadow-sm">Your next adventure,</span>
+                  <span className="block text-[#a8d4e6] mt-1 md:mt-2">starts here.</span>
+                </div>
+              </h1>
+            </div>
             
-            <p className="text-lg md:text-xl lg:text-2xl font-normal text-white/90 max-w-3xl leading-relaxed mb-12 animate-blur-fade-in delay-1000 drop-shadow-lg">
+            <p className="text-base md:text-lg lg:text-xl font-light text-white/80 max-w-2xl leading-relaxed mb-12 animate-blur-fade-in delay-1000 drop-shadow-lg">
               Book your next tournament trip and earn loyalty rewards, fly private to the best waters in the world, and unlock experiences built exclusively for anglers like you.
             </p>
 

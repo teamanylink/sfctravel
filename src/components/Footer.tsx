@@ -22,10 +22,10 @@ export default function Footer() {
               Portal
             </p>
             <ul className="space-y-4">
-              <li><a href="#benefits" className="text-sm font-light text-white/70 hover:text-white transition-colors">Member Benefits</a></li>
-              <li><a href="#packages" className="text-sm font-light text-white/70 hover:text-white transition-colors">Fan Travel</a></li>
-              <li><a href="#packages" className="text-sm font-light text-white/70 hover:text-white transition-colors">Private Aviation</a></li>
-              <li><a href="#packages" className="text-sm font-light text-white/70 hover:text-white transition-colors">Sustainability</a></li>
+              <li><a href="/login" className="text-sm font-light text-white/70 hover:text-white transition-colors">Member Benefits</a></li>
+              <li><a href="/login" className="text-sm font-light text-white/70 hover:text-white transition-colors">Fan Travel</a></li>
+              <li><a href="/login" className="text-sm font-light text-white/70 hover:text-white transition-colors">Private Aviation</a></li>
+              <li><a href="/login" className="text-sm font-light text-white/70 hover:text-white transition-colors">Sustainability</a></li>
             </ul>
           </div>
 

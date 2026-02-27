@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Lock, KeyRound } from "lucide-react";
+import { Lock, KeyRound, ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface AccessGateProps {
   onUnlock: () => void;
 }
 
 export default function AccessGate({ onUnlock }: AccessGateProps) {
+  const router = useRouter();
   const [code, setCode] = useState("");
   const [error, setError] = useState(false);
 
@@ -23,6 +25,14 @@ export default function AccessGate({ onUnlock }: AccessGateProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy-900/80 backdrop-blur-2xl">
+      <button
+        onClick={() => router.push("/portal")}
+        className="absolute top-8 left-8 flex items-center gap-2 text-white/50 hover:text-white transition-colors group"
+      >
+        <ArrowLeft size={18} strokeWidth={1.5} className="group-hover:-translate-x-1 transition-transform" />
+        <span className="text-xs font-light tracking-[0.2em] uppercase">Back</span>
+      </button>
+      
       <div className="bg-navy-900/40 backdrop-blur-xl p-12 rounded-[2rem] shadow-[0_0_80px_rgba(0,0,0,0.4)] border border-white/10 max-w-lg w-full mx-4 text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-ocean-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-ocean-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/4 pointer-events-none" />
@@ -64,8 +74,8 @@ export default function AccessGate({ onUnlock }: AccessGateProps) {
             </button>
           </form>
 
-          <p className="text-[9px] text-white/30 mt-10 tracking-[0.3em] uppercase">
-            Hint: Try CAPTAINS2026
+          <p className="text-[10px] text-[#a8d4e6]/60 mt-10 tracking-[0.3em] uppercase">
+            Hint: Try <span className="text-[#a8d4e6]">CAPTAINS2026</span>
           </p>
         </div>
       </div>
