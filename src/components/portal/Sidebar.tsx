@@ -12,7 +12,8 @@ import {
   BarChart3,
   Menu,
   X,
-  LogOut
+  LogOut,
+  ChevronLeft
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { mockMember } from "@/lib/mock-data";
@@ -30,6 +31,8 @@ const navItems = [
 export default function Sidebar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const isDashboard = pathname === "/portal";
+  const currentPage = navItems.find(item => item.href === pathname);
 
   useEffect(() => {
     if (isOpen) {
@@ -42,15 +45,38 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Mobile Header */}
+      {/* Mobile Header — native iOS style */}
       <div 
-        className="lg:hidden fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-xl flex items-center justify-between px-5 z-50 border-b border-navy-900/5 shadow-sm"
+        className="lg:hidden fixed top-0 left-0 right-0 bg-[#fcfcfc]/70 backdrop-blur-2xl z-50"
         style={{ paddingTop: "env(safe-area-inset-top)" }}
       >
-        <div className="flex items-center justify-between w-full h-14">
-          <Link href="/portal" className="text-navy-900 font-serif text-lg tracking-tight">SFC Travel</Link>
-          <button onClick={() => setIsOpen(!isOpen)} className="text-navy-900/70 p-2 -mr-2">
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
+        <div className="flex items-center justify-between h-11 px-4">
+          {/* Left: Back button or brand */}
+          {isDashboard ? (
+            <span className="text-navy-900 font-serif text-[17px] tracking-tight">SFC Travel</span>
+          ) : (
+            <Link 
+              href="/portal" 
+              className="flex items-center gap-0.5 -ml-1.5 active:opacity-50 transition-opacity"
+            >
+              <ChevronLeft size={22} strokeWidth={2.5} className="text-[#007AFF]" />
+              <span className="text-[17px] text-[#007AFF]">Dashboard</span>
+            </Link>
+          )}
+
+          {/* Center: Page title (sub-pages only) */}
+          {!isDashboard && currentPage && (
+            <span className="absolute left-1/2 -translate-x-1/2 text-[17px] font-semibold text-navy-900 pointer-events-none">
+              {currentPage.name}
+            </span>
+          )}
+
+          {/* Right: Menu */}
+          <button 
+            onClick={() => setIsOpen(!isOpen)} 
+            className="text-navy-900/60 p-1.5 -mr-1.5 rounded-full active:bg-navy-900/5 transition-colors"
+          >
+            {isOpen ? <X size={22} strokeWidth={1.8} /> : <Menu size={22} strokeWidth={1.8} />}
           </button>
         </div>
       </div>
