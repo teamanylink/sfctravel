@@ -17,13 +17,13 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center pb-20 px-6 lg:px-12 mt-16">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="max-w-4xl">
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-[6rem] font-light text-white leading-[1.1] mb-8 tracking-tight drop-shadow-lg">
+          <div className="max-w-5xl">
+            <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-semibold text-white leading-[1.05] mb-8 tracking-tight drop-shadow-2xl">
               <span className="block animate-blur-fade-in">From the sky to the seas,</span>
-              <span className="block animate-blur-fade-in delay-700 text-[#a8d4e6]">your next adventure starts here.</span>
+              <span className="block animate-blur-fade-in delay-700 text-[#a8d4e6] mt-2 xl:mt-4">your next adventure starts here.</span>
             </h1>
             
-            <p className="text-lg md:text-xl font-light text-white/90 max-w-2xl leading-relaxed mb-12 animate-blur-fade-in delay-1000 drop-shadow-md">
+            <p className="text-lg md:text-xl lg:text-2xl font-normal text-white/90 max-w-3xl leading-relaxed mb-12 animate-blur-fade-in delay-1000 drop-shadow-lg">
               Book your next tournament trip and earn loyalty rewards, fly private to the best waters in the world, and unlock experiences built exclusively for anglers like you.
             </p>
 

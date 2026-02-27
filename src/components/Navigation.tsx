@@ -27,26 +27,26 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <Anchor className={`transition-colors duration-700 ${scrolled ? "text-[#a8d4e6]" : "text-[#a8d4e6]"}`} size={28} />
+            <Anchor className={`transition-colors duration-700 ${scrolled ? "text-[#a8d4e6]" : "text-[#a8d4e6]"}`} size={32} />
             <div className="flex flex-col">
-              <span className={`text-2xl font-serif tracking-wide transition-colors duration-700 ${scrolled ? "text-navy-900" : "text-white"}`}>
+              <span className={`text-2xl md:text-3xl font-sans font-bold tracking-tight transition-colors duration-700 ${scrolled ? "text-navy-900" : "text-white"}`}>
                 SFC TRAVEL
               </span>
-              <span className={`text-[10px] font-medium tracking-[0.3em] uppercase transition-colors duration-700 ${scrolled ? "text-navy-900/40" : "text-white/60"}`}>
+              <span className={`text-[9px] md:text-[11px] font-semibold tracking-[0.3em] uppercase transition-colors duration-700 ${scrolled ? "text-navy-900/50" : "text-white/70"} mt-0.5`}>
                 powered by CTMS
               </span>
             </div>
           </a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-12">
-            <a href="#benefits" className={`text-xs font-light tracking-widest uppercase transition-colors duration-500 ${scrolled ? "text-navy-900/60 hover:text-navy-900" : "text-white/70 hover:text-white"}`}>
+          <div className="hidden md:flex items-center gap-10">
+            <a href="#benefits" className={`text-xs md:text-sm font-medium tracking-widest uppercase transition-colors duration-500 ${scrolled ? "text-navy-900/70 hover:text-navy-900" : "text-white/80 hover:text-white"}`}>
               Member Benefits
             </a>
-            <a href="#packages" className={`text-xs font-light tracking-widest uppercase transition-colors duration-500 ${scrolled ? "text-navy-900/60 hover:text-navy-900" : "text-white/70 hover:text-white"}`}>
+            <a href="#packages" className={`text-xs md:text-sm font-medium tracking-widest uppercase transition-colors duration-500 ${scrolled ? "text-navy-900/70 hover:text-navy-900" : "text-white/80 hover:text-white"}`}>
               Experiences
             </a>
-            <a href="/login" className={`text-xs font-medium tracking-widest uppercase py-3 px-8 rounded-full transition-all duration-500 ${scrolled ? "bg-navy-900 text-white hover:bg-navy-800" : "bg-[#a8d4e6] text-navy-900 hover:bg-white shadow-[0_0_20px_rgba(168,212,230,0.3)]"}`}>
+            <a href="/login" className={`text-xs md:text-sm font-semibold tracking-widest uppercase py-3.5 px-8 rounded-full transition-all duration-500 ${scrolled ? "bg-navy-900 text-white hover:bg-navy-800" : "bg-[#a8d4e6] text-navy-900 hover:bg-white shadow-[0_0_20px_rgba(168,212,230,0.3)]"}`}>
               Sign In
             </a>
           </div>
